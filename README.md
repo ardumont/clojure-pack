@@ -7,5 +7,5 @@ A pack to setup some more clojure setup (below emacs-live's own defaults).
 
 In your `.emacs-live.el` add this snippet:
 ```elisp
-(live-add-packs '(clojure-pack))
+(live-add-packs '("/path/to/clojure-pack"))
 ```
