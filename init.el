@@ -1,4 +1,6 @@
 (install-packs '(;; midje (testing framework for clojure)
+                 nrepl
+                 nrepl-ritz
                  midje-mode))
 
 (add-to-list 'auto-mode-alist '("\.dtm$" . clojure-mode))
