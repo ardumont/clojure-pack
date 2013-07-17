@@ -5,20 +5,6 @@
 
 (add-to-list 'auto-mode-alist '("\.dtm$" . clojure-mode))
 
-(fset 'all-future-fact
-      (lambda (&optional arg)
-        "Make all midje (fact) calls be a future-fact."
-        (interactive "p")
-        (kmacro-exec-ring-item
-         (quote ([134217788 134217765 102 97 99 116 32 return 102 117 116 117 114 101 45 102 97 99 116 32 return 33 24 19] 0 "%d"))
-         arg)))
-
-(fset 'all-fact
-      (lambda (&optional arg)
-        "Make all midje (future-fact) be a fact."
-        (interactive "p")
-        (kmacro-exec-ring-item (quote ("" 0 "%d")) arg)))
-
 (defun my-nrepl-mode-setup ()
   (interactive)
   (require 'nrepl-ritz))
