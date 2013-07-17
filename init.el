@@ -10,6 +10,8 @@
   (require 'nrepl-ritz))
 
 (add-hook 'nrepl-interaction-mode-hook 'my-nrepl-mode-setup)
+;; deal with camel case movement inside the clojure mode
+(add-hook 'clojure-mode-hook 'subword-mode)
 
 ;; (defun jack-in-once ()
 ;;   "Check the existence of a repl session (nrepl). If it doesn't exist, launch it."
