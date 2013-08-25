@@ -1,7 +1,10 @@
 (install-packs '(;; midje (testing framework for clojure)
                  nrepl
                  nrepl-ritz
-                 midje-mode))
+                 midje-mode
+                 expectations-mode))
+
+(require 'expectations-mode)
 
 (add-to-list 'auto-mode-alist '("\.dtm$" . clojure-mode))
 
