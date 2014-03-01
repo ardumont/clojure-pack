@@ -1,3 +1,9 @@
+;;; clojure-pack.el --- Clojure configuration
+
+;;; Commentary:
+
+;;; Code:
+
 (install-packs '(cider
                  midje-mode
                  expectations-mode
@@ -32,3 +38,5 @@
 ;; (defun nrepl-set-limit-print-length ()
 ;;   (interactive)
 ;;   (nrepl-send-string-sync "(set! *print-length* 100)" "clojure.core"))
+
+;;; clojure-pack.el ends here
