@@ -1,5 +1,4 @@
-(install-packs '(;; midje (testing framework for clojure)
-                 cider
+(install-packs '(cider
                  midje-mode
                  expectations-mode
                  clojure-mode))
