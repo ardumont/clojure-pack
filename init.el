@@ -33,5 +33,3 @@
   (interactive)
   (nrepl-send-string-sync "(set! *print-length* 100)" "clojure.core"))
 
-;; Load bindings config
-(live-load-config-file "bindings.el")
