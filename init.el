@@ -24,6 +24,8 @@
             (and (fboundp 'smartscan-mode) smartscan-mode (smartscan-mode -1))
             (local-set-key (kbd "M-RET") 'cider-doc)))
 
+(add-hook 'cider-repl-mode-hook 'enable-paredit-mode)
+
 ;; help in repl with :
 ;; (setq cider-repl-shortcut-dispatch-char ?\:)
 
