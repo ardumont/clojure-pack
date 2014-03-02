@@ -23,6 +23,9 @@
 ;; deal with camel case movement inside the clojure mode
 (add-hook 'clojure-mode-hook 'subword-mode)
 
+(add-hook 'cider-repl-mode-hook
+          (lambda () (and (fboundp 'smartscan-mode) smartscan-mode (smartscan-mode -1))))
+
 ;; (defun jack-in-once ()
 ;;   "Check the existence of a repl session (nrepl). If it doesn't exist, launch it."
 ;;   (interactive)
