@@ -34,21 +34,4 @@
             (local-set-key (kbd "C-c n e b") 'cider-eval-buffer)
             (local-set-key (kbd "M-RET") 'cider-doc)))
 
-;; (defun jack-in-once ()
-;;   "Check the existence of a repl session (nrepl). If it doesn't exist, launch it."
-;;   (interactive)
-;;   (exists-session-or-spawn-it "*nrepl-server*" (lambda () (nrepl-ritz-jack-in nil))))
-
-;; (add-hook 'clojure-mode-hook 'jack-in-once)
-
-;; remove the limitation of emacs-live concerning the clojure nrepl
-;; (defun nrepl-remove-limit-print-length ()
-;;   (interactive)
-;;   (nrepl-send-string-sync "(set! *print-length* nil)" "clojure.core"))
-
-;; reset the limitation of emacs-live concerning the clojure nrepl
-;; (defun nrepl-set-limit-print-length ()
-;;   (interactive)
-;;   (nrepl-send-string-sync "(set! *print-length* 100)" "clojure.core"))
-
 ;;; clojure-pack.el ends here
