@@ -25,7 +25,14 @@
 (add-hook 'clojure-mode-hook 'subword-mode)
 
 (add-hook 'cider-repl-mode-hook
-          (lambda () (and (fboundp 'smartscan-mode) smartscan-mode (smartscan-mode -1))))
+          (lambda ()
+            (and (fboundp 'smartscan-mode) smartscan-mode (smartscan-mode -1))
+            (local-set-key (kbd "M-RET") 'cider-doc)))
+
+(add-hook 'cider-mode-hook
+          (lambda ()
+            (local-set-key (kbd "C-c n e b") 'cider-eval-buffer)
+            (local-set-key (kbd "M-RET") 'cider-doc)))
 
 ;; (defun jack-in-once ()
 ;;   "Check the existence of a repl session (nrepl). If it doesn't exist, launch it."
@@ -43,10 +50,5 @@
 ;; (defun nrepl-set-limit-print-length ()
 ;;   (interactive)
 ;;   (nrepl-send-string-sync "(set! *print-length* 100)" "clojure.core"))
-
-;; cider
-;;(global-set-key (kbd "C-c n e b") 'cider-eval-buffer)
-(define-key cider-repl-mode-map (kbd "M-RET") 'cider-doc)
-(define-key cider-mode-map (kbd "M-RET") 'cider-doc)
 
 ;;; clojure-pack.el ends here
