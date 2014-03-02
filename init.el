@@ -13,6 +13,7 @@
 (require 'clojure-mode)
 (require 'expectations-mode)
 
+;; datomic file open in clojure-mode
 (add-to-list 'auto-mode-alist '("\.dtm$" . clojure-mode))
 
 ;; (defun my-nrepl-mode-setup ()
