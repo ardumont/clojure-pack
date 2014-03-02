@@ -41,7 +41,7 @@
 ;;   (nrepl-send-string-sync "(set! *print-length* 100)" "clojure.core"))
 
 ;; cider
-(global-set-key (kbd "C-c n e b") 'cider-eval-buffer)
+;;(global-set-key (kbd "C-c n e b") 'cider-eval-buffer)
 (define-key cider-repl-mode-map (kbd "M-RET") 'cider-doc)
 (define-key cider-mode-map (kbd "M-RET") 'cider-doc)
 
