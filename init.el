@@ -16,11 +16,6 @@
 ;; datomic file open in clojure-mode
 (add-to-list 'auto-mode-alist '("\.dtm$" . clojure-mode))
 
-;; (defun my-nrepl-mode-setup ()
-;;   (interactive)
-;;   (require 'nrepl-ritz))
-
-;; (add-hook 'nrepl-interaction-mode-hook 'my-nrepl-mode-setup)
 ;; deal with camel case movement inside the clojure mode
 (add-hook 'clojure-mode-hook 'subword-mode)
 
