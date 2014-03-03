@@ -18,6 +18,7 @@
 (add-to-list 'auto-mode-alist '("\.dtm$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\.dtm$" . smartscan-mode))
 (add-to-list 'auto-mode-alist '("\.clj$" . smartscan-mode))
+(add-to-list 'auto-mode-alist '("\.java$" . smartscan-mode))
 
 ;; deal with camel case movement inside the clojure mode
 (add-hook 'clojure-mode-hook 'subword-mode)
