@@ -7,7 +7,8 @@
 (install-packs '(cider
                  midje-mode
                  expectations-mode
-                 clojure-mode))
+                 clojure-mode
+                 smartscan-mode))
 
 (require 'cider)
 (require 'clojure-mode)
@@ -15,6 +16,8 @@
 
 ;; datomic file open in clojure-mode
 (add-to-list 'auto-mode-alist '("\.dtm$" . clojure-mode))
+(add-to-list 'auto-mode-alist '("\.dtm$" . smartscan-mode))
+(add-to-list 'auto-mode-alist '("\.clj$" . smartscan-mode))
 
 ;; deal with camel case movement inside the clojure mode
 (add-hook 'clojure-mode-hook 'subword-mode)
