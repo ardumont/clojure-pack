@@ -18,6 +18,9 @@
 ;; deal with camel case movement inside the clojure mode
 (add-hook 'clojure-mode-hook 'subword-mode)
 
+(require 'smartscan)
+(add-hook 'clojure-mode-hook (lambda () (smartscan-mode)))
+
 (add-hook 'cider-repl-mode-hook
           (lambda ()
             (local-set-key (kbd "M-RET") 'cider-doc)))
@@ -39,7 +42,5 @@
             (local-set-key (kbd "C-c c M-r") 'cider-namespace-refresh)
             (local-set-key (kbd "M-RET") 'cider-doc)))
 
-(require 'smartscan)
-(add-hook 'clojure-mode-hook (lambda () (smartscan-mode)))
 
 ;;; clojure-pack.el ends here
