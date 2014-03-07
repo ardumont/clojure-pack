@@ -25,7 +25,13 @@
 (add-hook 'clojure-mode-hook 'subword-mode)
 
 (require 'smartscan)
-(add-hook 'clojure-mode-hook (lambda () (smartscan-mode)))
+(add-hook 'clojure-mode-hook
+          (lambda ()
+            (smartscan-mode)
+            (clj-refactor-mode 1)
+            (yas/minor-mode 1)
+            (cljr-add-keybindings-with-prefix "C-c c")
+            (eval-sexp-fu-flash-mode 1)))
 
 (add-hook 'cider-repl-mode-hook
           (lambda ()
