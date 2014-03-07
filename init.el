@@ -7,10 +7,16 @@
 (install-packs '(cider
                  midje-mode
                  clojure-mode
-                 smartscan))
+                 smartscan
+                 clj-refactor
+                 yasnippet
+                 eval-sexp-fu))
 
+(require 'eval-sexp-fu)
 (require 'cider)
 (require 'clojure-mode)
+(require 'clj-refactor)
+(require 'yasnippet)
 
 ;; datomic file open in clojure-mode
 (add-to-list 'auto-mode-alist '("\.dtm$" . clojure-mode))
