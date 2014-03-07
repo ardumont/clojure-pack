@@ -27,9 +27,16 @@
 ;; help in repl with :
 ;; (setq cider-repl-shortcut-dispatch-char ?\:)
 
+(defun cider-namespace-refresh () "Add [org.clojure/tools.namespace \"0.2.4\"] to project.clj - Help to deal with clojure namespace"
+  (interactive)
+  (cider-interactive-eval
+   "(require 'clojure.tools.namespace.repl)
+    (clojure.tools.namespace.repl/refresh)"))
+
 (add-hook 'cider-mode-hook
           (lambda ()
-            (local-set-key (kbd "C-c n e b") 'cider-eval-buffer)
+            (local-set-key (kbd "C-c c e b") 'cider-eval-buffer)
+            (local-set-key (kbd "C-c c M-r") 'cider-namespace-refresh)
             (local-set-key (kbd "M-RET") 'cider-doc)))
 
 (require 'smartscan)
