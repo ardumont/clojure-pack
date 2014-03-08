@@ -48,10 +48,18 @@
    "(require 'clojure.tools.namespace.repl)
     (clojure.tools.namespace.repl/refresh)"))
 
+(defun cider-perso-run-expectations-tests () "Add [expectations [org.clojure/tools.namespace \"0.2.4\"] to project.clj - Help to deal with clojure namespace"
+  (interactive)
+  (cider-interactive-eval
+   "(require 'expectations)
+    (expectations/run-all-tests)"))
+
+;; (setq cider-mode-hook)
 (add-hook 'cider-mode-hook
           (lambda ()
             (local-set-key (kbd "C-c c e b") 'cider-eval-buffer)
             (local-set-key (kbd "C-c c M-r") 'cider-perso-namespace-refresh)
+            (local-set-key (kbd "C-c c r") 'cider-perso-run-expectations-tests)
             (local-set-key (kbd "M-RET") 'cider-doc)))
 
 ;; Enable eldoc in Clojure buffers:
