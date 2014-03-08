@@ -27,7 +27,7 @@
 (require 'smartscan)
 (add-hook 'clojure-mode-hook
           (lambda ()
-            (smartscan-mode)
+            (smartscan-mode-turn-on)
             (clj-refactor-mode 1)
             (yas/minor-mode 1)
             (cljr-add-keybindings-with-prefix "C-c c")
