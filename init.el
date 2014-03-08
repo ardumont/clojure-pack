@@ -58,8 +58,8 @@
 (add-hook 'cider-mode-hook
           (lambda ()
             (local-set-key (kbd "C-c c e b") 'cider-eval-buffer)
-            (local-set-key (kbd "C-c c M-r") 'cider-perso-namespace-refresh)
-            (local-set-key (kbd "C-c c r") 'cider-perso-run-expectations-tests)
+            (local-set-key (kbd "C-c c n r") 'cider-perso-namespace-refresh)
+            (local-set-key (kbd "C-c c t r") 'cider-perso-run-expectations-tests)
             (local-set-key (kbd "M-RET") 'cider-doc)))
 
 ;; Enable eldoc in Clojure buffers:
