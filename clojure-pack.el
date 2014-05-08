@@ -4,6 +4,7 @@
 
 ;;; Code:
 
+(require 'install-packages-pack)
 (install-packs '(cider
                  midje-mode
                  clojure-mode
@@ -110,4 +111,5 @@
 ;; offers a simpler alternative where CIDER will not attempt to match the correct REPL buffer based on underlying project directories:
 ;; (setq cider-switch-to-repl-command 'cider-switch-to-current-repl-buffer)
 
+(provide 'clojure-pack)
 ;;; clojure-pack.el ends here
