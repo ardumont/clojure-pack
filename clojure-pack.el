@@ -43,13 +43,15 @@
 ;; help in repl with :
 ;; (setq cider-repl-shortcut-dispatch-char ?\:)
 
-(defun cider-perso-namespace-refresh () "Add [org.clojure/tools.namespace \"0.2.4\"] to project.clj - Help to deal with clojure namespace"
+(defun cider-perso-namespace-refresh ()
+  "Add [org.clojure/tools.namespace \"0.2.4\"] to project.clj - Help to deal with clojure namespace."
   (interactive)
   (cider-interactive-eval
    "(require 'clojure.tools.namespace.repl)
     (clojure.tools.namespace.repl/refresh)"))
 
-(defun cider-perso-run-expectations-tests () "Add [expectations [org.clojure/tools.namespace \"0.2.4\"] to project.clj - Help to deal with clojure namespace"
+(defun cider-perso-run-expectations-tests ()
+  "Add [expectations [org.clojure/tools.namespace \"0.2.4\"] to project.clj - Help to deal with clojure namespace."
   (interactive)
   (cider-interactive-eval
    "(require 'expectations)
