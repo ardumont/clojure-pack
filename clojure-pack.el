@@ -99,7 +99,7 @@
 (setq cider-prompt-save-file-on-load t)
 
 ;; Change the result prefix for REPL evaluation (by default there's no prefix):
-(setq cider-repl-result-prefix ";; ")
+;; (setq cider-repl-result-prefix ";; ")
 
 ;; Change the result prefix for interactive evaluation (by default it's =>):
 ;; (set cider-interactive-eval-result-prefix ";; => ")
