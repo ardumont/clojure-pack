@@ -78,7 +78,7 @@
 ;; (setq cider-popup-stacktraces nil)
 
 ;; Enable error buffer popping also in the REPL:
-;; (setq cider-repl-popup-stacktraces t)
+(setq cider-repl-popup-stacktraces t)
 
 ;; To auto-select the error buffer when it's displayed:
 (setq cider-auto-select-error-buffer t)
