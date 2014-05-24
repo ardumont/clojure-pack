@@ -30,7 +30,7 @@
           (lambda ()
             (smartscan-mode-turn-on)
             (clj-refactor-mode 1)
-            (yas/minor-mode 1)
+            (yas-minor-mode 1)
             (cljr-add-keybindings-with-prefix "C-c c")
             (eval-sexp-fu-flash-mode 1)))
 
