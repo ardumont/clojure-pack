@@ -54,12 +54,14 @@
 (eval-after-load "cider"
   '(define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc))
 
-
 (add-hook 'cider-repl-mode-hook
           (lambda ()
             (local-set-key (kbd "M-RET") 'cider-doc)))
 
 (add-hook 'cider-repl-mode-hook 'enable-paredit-mode)
+
+;; for cider, do add the following to your ~/.lein/profiles.clj
+;; :plugins [[cider/cider-nrepl "0.6.0"]]
 
 ;; help in repl with :
 ;; (setq cider-repl-shortcut-dispatch-char ?\:)
