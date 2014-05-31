@@ -12,13 +12,15 @@
                  smartscan
                  clj-refactor
                  yasnippet
-                 eval-sexp-fu))
+                 eval-sexp-fu
+                 auto-complete))
 
 (require 'eval-sexp-fu)
 (require 'cider)
 (require 'clojure-mode)
 (require 'clj-refactor)
 (require 'yasnippet)
+(require 'auto-complete)
 
 ;; datomic file open in clojure-mode
 (add-to-list 'auto-mode-alist '("\.dtm$" . clojure-mode))
@@ -33,7 +35,8 @@
             (clj-refactor-mode 1)
             (yas-minor-mode 1)
             (cljr-add-keybindings-with-prefix "C-c c")
-            (eval-sexp-fu-flash-mode 1)))
+            (eval-sexp-fu-flash-mode 1)
+            (auto-complete-mode 1)))
 
 ;; ac-nrepl setup
 (require 'ac-nrepl)
@@ -89,7 +92,7 @@
             (local-set-key (kbd "M-RET") 'cider-doc)))
 
 ;; Enable eldoc in Clojure buffers:
-;; (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 
 ;; You can hide the *nrepl-connection* and *nrepl-server* buffers from appearing in some buffer switching commands like switch-to-buffer(C-x b) like this:
 ;; (setq nrepl-hide-special-buffers t)
@@ -135,6 +138,10 @@
 ;; While the default command cider-switch-to-relevant-repl-buffer should be an adequate choice for most users, cider-switch-to-current-repl-buffer
 ;; offers a simpler alternative where CIDER will not attempt to match the correct REPL buffer based on underlying project directories:
 ;; (setq cider-switch-to-repl-command 'cider-switch-to-current-repl-buffer)
+
+;; If using the wrap-stacktrace middleware from cider-nrepl, error buffer stacktraces may be filtered by default.
+;; Valid filter types include java, clj, repl, tooling, and dup. Setting this to nil will show all stacktrace frames.
+;; (setq cider-stacktrace-default-filters '(tooling dup))
 
 (provide 'clojure-pack)
 ;;; clojure-pack.el ends here
