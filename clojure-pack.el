@@ -6,21 +6,20 @@
 
 (require 'install-packages-pack)
 (install-packs '(cider
-                 ac-nrepl
                  midje-mode
                  clojure-mode
                  smartscan
                  clj-refactor
                  yasnippet
                  eval-sexp-fu
-                 auto-complete))
+                 company))
 
 (require 'eval-sexp-fu)
 (require 'cider)
 (require 'clojure-mode)
 (require 'clj-refactor)
 (require 'yasnippet)
-(require 'auto-complete)
+(require 'company)
 
 ;; datomic file open in clojure-mode
 (add-to-list 'auto-mode-alist '("\.dtm$" . clojure-mode))
@@ -35,27 +34,14 @@
             (clj-refactor-mode 1)
             (yas-minor-mode 1)
             (cljr-add-keybindings-with-prefix "C-c c")
-            (eval-sexp-fu-flash-mode 1)
-            (auto-complete-mode 1)))
-
-;; ac-nrepl setup
-(require 'ac-nrepl)
-(add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
-(add-hook 'cider-mode-hook 'ac-nrepl-setup)
-(eval-after-load "auto-complete"
-  '(add-to-list 'ac-modes 'cider-repl-mode))
+            (eval-sexp-fu-flash-mode 1)))
 
 (defun set-auto-complete-as-completion-at-point-function ()
   "Set auto-complete as completion at point function."
-  (setq completion-at-point-functions '(auto-complete)))
-(add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
+  (setq completion-at-point-functions '(company-complete)))
 
 (add-hook 'cider-repl-mode-hook 'set-auto-complete-as-completion-at-point-function)
 (add-hook 'cider-mode-hook 'set-auto-complete-as-completion-at-point-function)
-
-;; ac-nrepl's popup documentation in place of nrepl-doc:
-(eval-after-load "cider"
-  '(define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc))
 
 (add-hook 'cider-repl-mode-hook
           (lambda ()
