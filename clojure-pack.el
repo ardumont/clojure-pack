@@ -4,16 +4,6 @@
 
 ;;; Code:
 
-(require 'install-packages-pack)
-(install-packages-pack/install-packs '(cider
-                                       midje-mode
-                                       clojure-mode
-                                       smartscan
-                                       clj-refactor
-                                       yasnippet
-                                       eval-sexp-fu
-                                       company))
-
 (require 'eval-sexp-fu)
 (require 'cider)
 (require 'clojure-mode)
